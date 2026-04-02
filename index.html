@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guides by Guy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1714;
+      --paper: #f7f3ec;
+      --cream: #eee9de;
+      --muted: #8a8278;
+      --pin: #E8523A;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --fancy: 'Fraunces', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(26,23,20,0.1);
+      position: sticky;
+      top: 0;
+      background: var(--paper);
+      z-index: 50;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+    }
+
+    .logo-square {
+      width: 42px;
+      height: 42px;
+      background: var(--ink);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-square span {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--paper);
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .logo-pin {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      width: 20px;
+      height: 26px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .logo-guides-by {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-guy {
+      font-family: var(--fancy);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.4rem;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    .header-tagline {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 6rem 2.5rem 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+    }
+
+    .hero-left {}
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pin);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 1.5rem;
+      height: 1px;
+      background: var(--pin);
+      display: inline-block;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .hero-right {
+      padding-bottom: 0.5rem;
+    }
+
+    .hero-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-body strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(26,23,20,0.12);
+    }
+
+    .divider-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      max-width: 900px;
+      margin: 3rem auto 6rem;
+      padding: 0 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1px;
+      background: rgba(26,23,20,0.1);
+      border: 1px solid rgba(26,23,20,0.1);
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--paper);
+      padding: 1.75rem;
+      cursor: pointer;
+      transition: background 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      background: #fffcf6;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .card-flag {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .card-price {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--pin);
+      background: rgba(232,82,58,0.08);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      font-weight: 400;
+    }
+
+    .card-city {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-country {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(26,23,20,0.08);
+      padding-top: 1rem;
+    }
+
+    .card-wip {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.6;
+    }
+
+    .card-arrow {
+      font-size: 0.9rem;
+      color: var(--muted);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .card:hover .card-arrow {
+      transform: translateX(4px);
+      color: var(--ink);
+    }
+
+    .card-buy {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .card:hover .card-buy { color: var(--ink); }
+
+    /* WIP card style */
+    .card.wip {
+      opacity: 0.6;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(26,23,20,0.1);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-left {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-right {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-left  { animation: fadeUp 0.5s ease both; }
+    .hero-right { animation: fadeUp 0.5s ease 0.1s both; }
+    .card       { animation: fadeUp 0.4s ease both; }
+
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 2.5rem; }
+      .grid { margin: 2rem auto 4rem; padding: 0 1.5rem; }
+      .header-tagline { display: none; }
+      header { padding: 1.25rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="#">
+      <div class="logo-mark">
+        <div class="logo-square"><span>G</span></div>
+        <svg class="logo-pin" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="10" fill="#E8523A"/>
+          <circle cx="10" cy="10" r="4" fill="white"/>
+          <path d="M6 17 Q10 28 10 28 Q10 28 14 17" fill="#E8523A"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-guides-by">guides by</span>
+        <span class="logo-guy">Guy</span>
+      </div>
+    </a>
+    <div class="header-tagline">Travel · Food · Queer Life</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Personal city guides</div>
+      <h1>Places I've been. Things I've <em>actually</em> done.</h1>
+    </div>
+    <div class="hero-right">
+      <p class="hero-body">
+        Friends kept asking for tips — restaurants, cafes, where to go out, which neighbourhoods, what to skip.
+        So I wrote it all down. <strong>These are my real notes</strong>, honest takes, Google Maps lists, and yes — a queer lens on every city.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">13</span>
+          <span class="stat-label">Cities</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">$5</span>
+          <span class="stat-label">Per guide</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Access</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><span class="divider-label">13 guides available now</span></div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <div class="footer-left">© 2025 Guides by Guy</div>
+    <div class="footer-right">Pay once · Access forever</div>
+  </footer>
+
+  <script>
+    const GUIDES = [
+      {
+        flag: "🇨🇦", city: "Montreal", country: "Canada",
+        desc: "Guy's home base — smash burgers, brunch deep cuts, laptopable cafes, vintage shopping, festivals, and where the gays are on a Saturday night.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇦🇷", city: "Buenos Aires", country: "Argentina",
+        desc: "Six months across three years. Blue dollar tips, where to stay in Palermo vs Chacarita, remote work setup, gay bars, and how to book hotels via WhatsApp.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇧🇷", city: "Florianópolis", country: "Brazil",
+        desc: "One of Guy's favourite places on earth. Praia Mole, the gay beach Galheta, Barra de Lagoa as a base, night out spots, and where to get the best açaí.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇧🇷", city: "Rio de Janeiro", country: "Brazil",
+        desc: "Carnaval-oriented and unapologetically queer. Blocos to hit, where to stay (Ipanema, obviously), safety tips, food, and a day-by-day Carnaval schedule.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇦🇺", city: "Melbourne", country: "Australia",
+        desc: "More a city to live in than to tour. Best coffee in the world (seriously), alt culture, Collingwood/Fitzroy eats, queer nightlife IG accounts to follow.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇦🇺", city: "Sydney", country: "Australia",
+        desc: "Stay in Surry Hills, hit the beaches in order of gayness, walk Bondi to Coogee, and a deeply curated food list from fine dining to Spice Alley.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇦🇺", city: "Hobart", country: "Australia",
+        desc: "Tasmania as a base. MONA is unmissable. Bruny Island over Maria Island. A full 4–5 day itinerary with day trips, hikes, and the best sunset spots.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇩🇪", city: "Berlin", country: "Germany",
+        desc: "Friedrichshain over Mitte. Fritz Kola, currywurst, Burgermeister, Tempelhof tours, Admiralbrücke at sunset, and the full queer party scene.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇦🇹", city: "Vienna", country: "Austria",
+        desc: "Neubau for the hip, Innere Stadt for the history. Schnitzel, Sachertorte, Viennese cafe culture, Christmas markets, and where to find techno.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇬🇷", city: "Thessaloniki", country: "Greece",
+        desc: "Greece's second city, properly done. Heptapyrgion at sunset, the Ano Poli old district, real museum ratings, Bit Bazaar, and the gay bar scene.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇲🇽", city: "Zipolite & Oaxaca", country: "Mexico",
+        desc: "Two guides in one. Zipolite: beach schedule, Soirée pop-up dinners, Disco Domingo, Playa del Amor. Oaxaca: mezcal, mole, Monte Albán, getting to Zipo.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇳🇿", city: "Auckland", country: "New Zealand",
+        desc: "Honest take: sleepy but useful. Ponsonby for vibes, K-Road for gay stuff, Pasifika festival if you time it right, and great Asian food across the board.",
+        url: "YOUR_LS_LINK_HERE",
+      },
+      {
+        flag: "🇺🇸", city: "New York", country: "USA",
+        wip: true,
+        desc: "Still cooking. Coming soon with Guy's take on NYC — neighbourhood picks, food, and the spots worth knowing beyond the obvious.",
+        url: null,
+      },
+    ];
+
+    const grid = document.getElementById('grid');
+
+    GUIDES.forEach((g, i) => {
+      const card = document.createElement(g.url && !g.wip ? 'a' : 'div');
+      if (g.url && !g.wip) {
+        card.href = g.url;
+        card.target = '_blank';
+        card.rel = 'noopener';
+      }
+      card.className = 'card' + (g.wip ? ' wip' : '');
+      card.style.animationDelay = `${i * 0.04}s`;
+
+      card.innerHTML = `
+        <div class="card-top">
+          <span class="card-flag">${g.flag}</span>
+          <span class="card-price">${g.wip ? 'Soon' : '$5'}</span>
+        </div>
+        <div class="card-city">${g.city}</div>
+        <div class="card-country">${g.country}</div>
+        <div class="card-desc">${g.desc}</div>
+        <div class="card-footer">
+          ${g.wip
+            ? '<span class="card-wip">Work in progress</span>'
+            : '<span class="card-buy">Get this guide</span>'
+          }
+          <span class="card-arrow">${g.wip ? '' : '→'}</span>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
