@@ -116,6 +116,82 @@
       text-transform: uppercase;
     }
 
+    /* ── NAV DROPDOWN ── */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(26,23,20,0.15);
+      border-radius: 999px;
+      background: transparent;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--ink);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      border-color: rgba(26,23,20,0.35);
+      background: rgba(26,23,20,0.04);
+    }
+
+    .nav-btn svg {
+      transition: transform 0.2s;
+    }
+
+    .nav-dropdown.open .nav-btn svg {
+      transform: rotate(180deg);
+    }
+
+    .nav-panel {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: var(--paper);
+      border: 1px solid rgba(26,23,20,0.12);
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(26,23,20,0.1);
+      min-width: 220px;
+      padding: 0.5rem;
+      z-index: 100;
+    }
+
+    .nav-dropdown.open .nav-panel {
+      display: block;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.85rem;
+      font-weight: 400;
+      transition: background 0.12s;
+    }
+
+    .nav-item:hover {
+      background: var(--cream);
+    }
+
+    .nav-item-flag {
+      font-size: 1rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
     /* ── HERO ── */
     .hero {
       padding: 6rem 2.5rem 4rem;
@@ -560,6 +636,15 @@
       </div>
     </a>
     <div class="header-tagline">Travel · Food · Queer Life</div>
+    <div class="nav-dropdown" id="navDropdown">
+      <button class="nav-btn" id="navBtn" aria-haspopup="true" aria-expanded="false">
+        Jump to a guide
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2,4 6,8 10,4"/>
+        </svg>
+      </button>
+      <div class="nav-panel" id="navPanel" role="menu"></div>
+    </div>
   </header>
 
   <section class="hero">
@@ -760,6 +845,32 @@
         url: null,
       },
     ];
+
+    // ── Dropdown nav ──
+    const navPanel = document.getElementById('navPanel');
+    GUIDES.filter(g => g.url && !g.wip).forEach(g => {
+      const a = document.createElement('a');
+      a.className = 'nav-item';
+      a.href = g.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.role = 'menuitem';
+      a.innerHTML = `<span class="nav-item-flag">${g.flag}</span>${g.city}`;
+      navPanel.appendChild(a);
+    });
+
+    const navDropdown = document.getElementById('navDropdown');
+    const navBtn = document.getElementById('navBtn');
+    navBtn.addEventListener('click', () => {
+      const open = navDropdown.classList.toggle('open');
+      navBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (!navDropdown.contains(e.target)) {
+        navDropdown.classList.remove('open');
+        navBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
 
     const grid = document.getElementById('grid');
 
