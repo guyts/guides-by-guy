@@ -398,6 +398,131 @@
       letter-spacing: 0.1em;
     }
 
+    /* ── WHAT'S INSIDE ── */
+    .whats-inside {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2.5rem 3rem;
+      border-top: 1px solid rgba(26,23,20,0.08);
+    }
+
+    .wi-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .wi-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pin);
+    }
+
+    .wi-heading {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .wi-sub {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-left: auto;
+    }
+
+    .wi-samples {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(26,23,20,0.1);
+      border: 1px solid rgba(26,23,20,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.75rem;
+    }
+
+    .wi-sample {
+      background: var(--cream);
+      padding: 1.4rem 1.35rem 1.5rem;
+    }
+
+    .wi-sample-label {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(26,23,20,0.1);
+    }
+
+    .wi-entry {
+      margin-bottom: 0.85rem;
+    }
+
+    .wi-entry:last-child { margin-bottom: 0; }
+
+    .wi-entry-name {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .wi-laptops {
+      font-size: 0.6rem;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .wi-entry-note {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .wi-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .wi-feature {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .wi-feature::before {
+      content: "✓";
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--pin);
+    }
+
+    @media (max-width: 640px) {
+      .whats-inside { padding: 3rem 1.5rem 2rem; }
+      .wi-samples { grid-template-columns: 1fr; }
+      .wi-sub { display: none; }
+      .wi-header { flex-wrap: wrap; }
+    }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
@@ -461,6 +586,87 @@
           <span class="stat-label">Access</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="whats-inside">
+    <div class="wi-header">
+      <span class="wi-eyebrow">A peek inside</span>
+      <h2 class="wi-heading">What's Inside?</h2>
+      <span class="wi-sub">Using Montreal as an example</span>
+    </div>
+
+    <div class="wi-samples">
+
+      <div class="wi-sample">
+        <div class="wi-sample-label">🍔 Smash burgers, ranked</div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Projet Pilote</div>
+          <div class="wi-entry-note">Pricier, but cleaner. Great beer, window seat at sunset if you're lucky.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Joyo Burger</div>
+          <div class="wi-entry-note">Sloppy but good. The Mexican one is too sloppy, tbh.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Double's</div>
+          <div class="wi-entry-note">If you want a smash at a dive bar — the bar itself is not actually great.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">MDMH</div>
+          <div class="wi-entry-note">Casse-croûte vibes with delish burgers. Off the usual areas.</div>
+        </div>
+      </div>
+
+      <div class="wi-sample">
+        <div class="wi-sample-label">☕ Cafes — with laptop ratings</div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Pastel Rita <span class="wi-laptops">💻💻💻</span></div>
+          <div class="wi-entry-note">Cocktails, great direct light. The argousier lemonade is everything in summer.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Structure Roasters <span class="wi-laptops">💻</span></div>
+          <div class="wi-entry-note">One of the best in the city — even for takeout. In downtown, which says something.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Le Falco <span class="wi-laptops">💻💻💻</span></div>
+          <div class="wi-entry-note">Great for remote work + Japanese lunch. Gets busy at 12:30. Closes at 3pm though.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Savsav <span class="wi-laptops">💻💻</span></div>
+          <div class="wi-entry-note">Hip, trendy, weird but sunny location. Works.</div>
+        </div>
+      </div>
+
+      <div class="wi-sample">
+        <div class="wi-sample-label">💅 Gay scene & parties</div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Halloween at Stereo</div>
+          <div class="wi-entry-note">Go the Saturday, not the Friday. It's called Scareo. You'll understand when you're there.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Exposé Noir</div>
+          <div class="wi-entry-note">Berlin vibes, nice productions. Sign up to their newsletter — that's the only way you'll know.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Stereo on New Year's</div>
+          <div class="wi-entry-note">Go the day of, not NYE. Buy your ticket months in advance. Seriously.</div>
+        </div>
+        <div class="wi-entry">
+          <div class="wi-entry-name">Boiler Room</div>
+          <div class="wi-entry-note">Happens occasionally. Keep an eye out — when it's on, it's on.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="wi-features">
+      <span class="wi-feature">Personal Google Maps lists, ready to save</span>
+      <span class="wi-feature">Honest "skip this" takes</span>
+      <span class="wi-feature">Laptop ratings for every cafe</span>
+      <span class="wi-feature">Queer lens on every city</span>
+      <span class="wi-feature">Summer vs. winter tips</span>
+      <span class="wi-feature">Gay bars, parties & practical stuff</span>
     </div>
   </section>
 
