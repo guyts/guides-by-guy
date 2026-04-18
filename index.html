@@ -663,7 +663,7 @@
           <span class="stat-label">Cities</span>
         </div>
         <div class="stat">
-          <span class="stat-num">$5</span>
+          <span class="stat-num">from $3</span>
           <span class="stat-label">Per guide</span>
         </div>
         <div class="stat">
@@ -766,73 +766,73 @@
   <script>
     const GUIDES = [
       {
-        flag: "🇨🇦", city: "Montreal", country: "Canada",
+        flag: "🇨🇦", city: "Montreal", country: "Canada", price: 5,
         desc: "Guy's home base — smash burgers, brunch deep cuts, laptopable cafes, vintage shopping, festivals, and where the gays are on a Saturday night.",
         areas: ["Food & Coffee", "Brunch & Burgers", "Shopping", "Festivals", "Nightlife", "Gay Scene"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/f744383c-362d-44b6-823a-c266a6579186?discount=0",
       },
       {
-        flag: "🇦🇷", city: "Buenos Aires", country: "Argentina",
+        flag: "🇦🇷", city: "Buenos Aires", country: "Argentina", price: 5,
         desc: "Six months across three years. Blue dollar tips, where to stay in Palermo vs Chacarita, remote work setup, gay bars, and how to book hotels via WhatsApp.",
         areas: ["Where to Stay", "Remote Work", "Food & Drink", "Gay Bars & Parties", "Currency Tips", "Day Trips"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/2b77d634-0134-42f3-b5ba-985e809aa803",
       },
       {
-        flag: "🇧🇷", city: "Florianópolis", country: "Brazil",
+        flag: "🇧🇷", city: "Florianópolis", country: "Brazil", price: 5,
         desc: "One of Guy's favourite places on earth. Praia Mole, the gay beach Galheta, Barra de Lagoa as a base, night out spots, and where to get the best açaí.",
         areas: ["Where to Stay", "Beaches & Hikes", "Food & Cafes", "Nightlife", "Gay Beaches"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/c962cd80-0bc2-4028-a749-289983f8e8be",
       },
       {
-        flag: "🇧🇷", city: "Rio de Janeiro", country: "Brazil",
+        flag: "🇧🇷", city: "Rio de Janeiro", country: "Brazil", price: 5,
         desc: "Carnaval-oriented and unapologetically queer. Blocos to hit, where to stay (Ipanema, obviously), safety tips, food, and a day-by-day Carnaval schedule.",
         areas: ["Carnaval Blocos", "Gay Parties", "Beaches", "Food", "Nightlife"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/e36203b4-8d08-46cd-b8ad-33c7ecc75b9d",
       },
       {
-        flag: "🇦🇺", city: "Melbourne", country: "Australia",
+        flag: "🇦🇺", city: "Melbourne", country: "Australia", price: 5,
         desc: "More a city to live in than to tour. Best coffee in the world (seriously), alt culture, Collingwood/Fitzroy eats, queer nightlife IG accounts to follow.",
         areas: ["Where to Stay", "Coffee Culture", "Food & Drink", "Nightlife", "Gay Scene"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/15ada0c3-e56d-4e0b-8916-5396297ac4db",
       },
       {
-        flag: "🇦🇺", city: "Sydney", country: "Australia",
+        flag: "🇦🇺", city: "Sydney", country: "Australia", price: 5,
         desc: "Stay in Surry Hills, hit the beaches in order of gayness, walk Bondi to Coogee, and a deeply curated food list from fine dining to Spice Alley.",
         areas: ["Where to Stay", "Beaches", "Food", "Day Trips", "Gay Scene"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/96e19f71-0982-4579-af07-b295a18fc10e",
       },
       {
-        flag: "🇦🇺", city: "Hobart", country: "Australia",
+        flag: "🇦🇺", city: "Hobart", country: "Australia", price: 10,
         desc: "Tasmania as a base. MONA is unmissable. Bruny Island over Maria Island. A full 4–5 day itinerary with day trips, hikes, and the best sunset spots.",
         areas: ["Day Trips", "Hiking", "Wildlife", "MONA", "Food & Coffee"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/df91103d-b94c-4d70-af7d-1f290e61ac79",
       },
       {
-        flag: "🇩🇪", city: "Berlin", country: "Germany",
+        flag: "🇩🇪", city: "Berlin", country: "Germany", price: 4,
         desc: "Friedrichshain over Mitte. Fritz Kola, currywurst, Burgermeister, Tempelhof tours, Admiralbrücke at sunset, and the full queer party scene.",
         areas: ["Where to Stay", "Food & Drink", "Queer Scene", "Culture & Museums", "Getting Around"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/a1b87dba-774e-4b6d-961a-ba8d536a441f",
       },
       {
-        flag: "🇦🇹", city: "Vienna", country: "Austria",
+        flag: "🇦🇹", city: "Vienna", country: "Austria", price: 3,
         desc: "Neubau for the hip, Innere Stadt for the history. Schnitzel, Sachertorte, Viennese cafe culture, Christmas markets, and where to find techno.",
         areas: ["Where to Stay", "Café Culture", "Food", "Culture & Concerts", "Nightlife"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/9986de24-d318-4575-b0da-e2a2e4d34174",
       },
       {
-        flag: "🇬🇷", city: "Thessaloniki", country: "Greece",
+        flag: "🇬🇷", city: "Thessaloniki", country: "Greece", price: 3,
         desc: "Greece's second city, properly done. Heptapyrgion at sunset, the Ano Poli old district, real museum ratings, Bit Bazaar, and the gay bar scene.",
         areas: ["Old City & Museums", "Markets", "Food", "Nightlife", "Day Trips"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/d0416655-f338-4f81-ab4b-ff0900de4568",
       },
       {
-        flag: "🇲🇽", city: "Zipolite & Oaxaca", country: "Mexico",
+        flag: "🇲🇽", city: "Zipolite & Oaxaca", country: "Mexico", price: 5,
         desc: "Two guides in one. Zipolite: beach schedule, Soirée pop-up dinners, Disco Domingo, Playa del Amor. Oaxaca: mezcal, mole, Monte Albán, getting to Zipo.",
         areas: ["Beach Life", "Where to Stay", "Food & Mezcal", "Nightlife", "Oaxaca"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/8f6a30fb-7fb4-4cf7-8dd2-39532960a142",
       },
       {
-        flag: "🇳🇿", city: "Auckland", country: "New Zealand",
+        flag: "🇳🇿", city: "Auckland", country: "New Zealand", price: 3,
         desc: "Honest take: sleepy but useful. Ponsonby for vibes, K-Road for gay stuff, Pasifika festival if you time it right, and great Asian food across the board.",
         areas: ["Where to Stay", "Asian Food", "Beaches", "Nightlife", "Gay Scene"],
         url: "https://guidesbyguy.lemonsqueezy.com/checkout/buy/752a52b0-4001-49b7-9121-69845dcaa0d8",
@@ -887,7 +887,7 @@
       card.innerHTML = `
         <div class="card-top">
           <span class="card-flag">${g.flag}</span>
-          <span class="card-price">${g.wip ? 'Soon' : '$5'}</span>
+          <span class="card-price">${g.wip ? 'Soon' : '$' + g.price}</span>
         </div>
         <div class="card-city">${g.city}</div>
         <div class="card-country">${g.country}</div>
